@@ -12,7 +12,7 @@
 
 - 도메인 확인
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dcfdee24-a8c6-4007-9bd5-f63bfd379e52/Untitled.png)
+    ![image](https://user-images.githubusercontent.com/53958188/169536238-e7bad8bb-5912-47a3-a5f2-28a1e50b83e0.png)
     
     - 거래 종류와 거래 금액을 알려주면 중개수수료가 얼마인지 알려주는 서비스
 - Health Check API
@@ -32,11 +32,11 @@
         
         [IntelliJ의 .http를 사용해 Postman 대체하기](https://jojoldu.tistory.com/266)
         
-        ![http 테스트](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/13a681b0-40b6-4767-89de-e2421b7a7831/Untitled.png)
+        ![image](https://user-images.githubusercontent.com/53958188/169536324-fd1ef1f9-6caf-4632-91f4-57422c7e13af.png)
         
         http 테스트
         
-        ![다양한 환경을 테스트할 때 서버 주소를 변수로 지정해둔다](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/56b17635-5501-46a2-a8ad-44433ce7904c/Untitled.png)
+        ![image](https://user-images.githubusercontent.com/53958188/169536388-145ab6bb-0102-443c-b931-c7b08f7d6308.png)
         
         다양한 환경을 테스트할 때 서버 주소를 변수로 지정해둔다
         
