@@ -1,6 +1,8 @@
 package com.practice.houseutils.policy;
 
 import com.practice.houseutils.constants.ActionType;
+import com.practice.houseutils.exception.ErrorCode;
+import com.practice.houseutils.exception.HouseUtilsException;
 
 /**
  * @author HwiMin
@@ -15,7 +17,7 @@ public class BrokeragePolicyFactory {
             case PURCHASE:
                 return new PurchaseBrokeragePolicy();
             default:
-                throw new IllegalArgumentException("해당 액션에 대한 정책이 존재하지 않습니다.");
+                throw new HouseUtilsException(ErrorCode.INVALID_REQUEST);
         }
     }
 }
