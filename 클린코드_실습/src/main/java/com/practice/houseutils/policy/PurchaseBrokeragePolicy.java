@@ -1,26 +1,31 @@
 package com.practice.houseutils.policy;
 
+import lombok.Getter;
+
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @author HwiMin
  *
  * 매매할 때 증개수수료를 계산하는 클래스
  */
 
+@Getter
 public class PurchaseBrokeragePolicy implements BrokeragePolicy{
 
-    public BrokerageRule createBrokerageRule(Long price){
-        BrokerageRule rule;
-        if(price<50_000_000){
-            rule = new BrokerageRule(0.0, 250_000L);
-        } else if(price<200_000_000){
-            rule = new BrokerageRule(0.5, 800_000L);
-        } else if(price<600_000_000){
-            rule = new BrokerageRule(0.4, null);
-        } else if(price<900_000_000){
-            rule = new BrokerageRule(0.5, null);
-        } else{
-            rule = new BrokerageRule(0.9, 800_000L);
-        }
-        return rule;
+    private final List<BrokerageRule> rules;
+
+    // 객체간의 관계로 바꿈
+    public PurchaseBrokeragePolicy(){
+        rules = Arrays.asList(
+                new BrokerageRule(50_000_000L, 0.0, 250_000L),
+                new BrokerageRule(200_000_000L, 0.5, 800_000L),
+                new BrokerageRule(600_000_000L, 0.4),
+                new BrokerageRule(900_000_000L, 0.5),
+                new BrokerageRule(Long.MAX_VALUE, 0.9)
+        );
+
     }
+
 }

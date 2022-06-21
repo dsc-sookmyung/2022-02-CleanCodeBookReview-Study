@@ -10,6 +10,9 @@ import com.practice.houseutils.exception.HouseUtilsException;
  */
 
 public class BrokeragePolicyFactory {
+    private static final RentBrokeragePolicy rentBrokeragePolicy = new RentBrokeragePolicy();
+    private static final PurchaseBrokeragePolicy purchaseBrokeragePolicy = new PurchaseBrokeragePolicy();
+
     public static BrokeragePolicy of(ActionType actionType){
         switch (actionType){
             case RENT:

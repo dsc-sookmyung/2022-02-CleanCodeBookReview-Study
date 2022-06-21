@@ -1,27 +1,30 @@
 package com.practice.houseutils.policy;
 
+import lombok.Getter;
+
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @author HwiMin
  *
  * 임대차일때 증개수수료를 계산하는 클래스
  */
 
+@Getter
 public class RentBrokeragePolicy implements BrokeragePolicy{
 
-    public BrokerageRule createBrokerageRule(Long price){
-        BrokerageRule rule;
-        if(price<50_000_000){
-            rule = new BrokerageRule(0.5, 200_000L);
-        } else if(price<100_000_000){
-            rule = new BrokerageRule(0.4, 300_000L);
-        } else if(price<300_000_000){
-            rule = new BrokerageRule(0.3, null);
-        } else if(price<600_000_000){
-            rule = new BrokerageRule(0.4, null);
-        } else{
-            rule = new BrokerageRule(0.8, 800_000L);
-        }
-        return rule;
+    private final List<BrokerageRule> rules;
+
+    public RentBrokeragePolicy(){
+        rules = Arrays.asList(
+                new BrokerageRule(50_000_000L, 0.5, 200_000L),
+                new BrokerageRule(100_000_000L, 0.4, 300_000L),
+                new BrokerageRule(300_000_000L, 0.3),
+                new BrokerageRule(600_000_000L, 0.4),
+                new BrokerageRule(Long.MAX_VALUE, 0.8)
+        );
     }
 
 }
+
